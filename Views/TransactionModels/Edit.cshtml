@@ -1,0 +1,85 @@
+﻿
+@model TransactionModel
+
+<form method="post" asp-action="Edit" >
+    <input type="hidden" asp-for="TransId" />
+    <div class=" col-md-12">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Transaction</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label">Phone</label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Bank" class="control-label">Bank</label>
+                    <input asp-for="Bank" class="form-control" />
+                    <span asp-validation-for="Bank" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="AccNum" class="control-label">Acc.Number</label>
+                    <input asp-for="AccNum" class="form-control" />
+                    <span asp-validation-for="AccNum" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label">Amount</label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" style="width: 150px" />
+                <a asp-controller="TransactionModels" asp-action="Index" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i>Back to List</a>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@*This is for client side validation*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
